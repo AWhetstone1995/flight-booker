@@ -1,0 +1,14 @@
+<section class="hero is-light is-bold is-halfheight">
+  <div class="container">
+    <%= render "search-form" %>
+  </div>
+  <div class="column is-centered">
+  <div class="box">
+    <% unless @flights.nil? %>
+      <% if @flights.any? %>
+        <%= render "search-results" %>
+      <% end %>
+    <% end %>
+    </div>
+  </div>
+</section>

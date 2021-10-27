@@ -1,0 +1,19 @@
+<%= form_with url: "/flights", method: :get do |flight| %>
+  <% @flights.each do |f| %>
+    <div class="field is-grouped">
+    <% departure_airport = f.departure_airport.code %>
+    <% arrival_airport = f.arrival_airport.code %>
+    <% date = f.start.strftime("%d/%m/%Y") %>
+    <% time = f.start.strftime("%H:%M") %>
+    <% duration = f.flight_duration %>
+    <%= radio_button_tag(:f, f.id) %>
+    <p class="control">From: <%= departure_airport %>
+    <p class="control">Departure date: <%= date %></p>
+    <p class="control">Departure time: <%= time %></p>
+    <p class="control">Duration: <%= duration %> hours </p>
+    <p class="control">To: <%= arrival_airport %>
+    </div>
+  <% end %>
+  <%= flight.submit "Book flight" %>
+<% end %>
+<div>

@@ -1,0 +1,23 @@
+<div class="column is-vcentered">
+<%= form_with url: "/flights", method: :get do |f| %>
+    <div class="control">
+    <%= f.select(:departure_airport_id, options_for_select(@airport_codes), { prompt: "From" }) %>  
+    <%= f.select(:arrival_airport_id, options_for_select(@airport_codes), { prompt: "To" }) %>
+    </div>
+    <div class="control">
+    <%= f.select(:passenger_count, options_for_select(1..4), { prompt: "Passengers" }) %>
+    </div>
+    <div class="control">
+    <%= f.select(:day, options_for_select(@days), { prompt: "Day" }) %>
+    </div>
+    <div class="control">
+    <%= f.select(:month, options_for_select(@months), { prompt: "Month" }) %>
+    </div>
+    <div class="control">
+    <%= f.select(:year, options_for_select(@years), { prompt: "Year" }) %>
+    </div>
+    <div class="control">
+    <%= submit_tag("Show Flights")%>
+    </div>
+<% end %>
+</div>
