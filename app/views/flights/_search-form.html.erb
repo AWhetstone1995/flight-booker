@@ -1,24 +1,27 @@
 <div class="column is-vcentered">
 <%= form_with url: "/flights", method: :get do |f| %>
-    <div class="control">
-    <%= f.select(:departure_airport_id, options_for_select(@airport_codes), { prompt: "From" }) %>  
-    <%= f.select(:arrival_airport_id, options_for_select(@airport_codes), { prompt: "To" }) %>
+  <div class="dropdown is-active">
+    <div class="block">
+      <%= f.select(:departure_airport_id, options_for_select(@airport_codes), { prompt: "From" }, class: "dropdown-item") %>  
     </div>
-    <div class="control">
-    <%= f.select(:passenger_count, options_for_select(1..4, selected: params[:passenger_count]), { prompt: "Passengers" }) %>
-    <%# <%= f.select :passenger_count, [1, 2, 3, 4], { prompt: "Passengers" } %>
+    <div class="block">
+      <%= f.select(:arrival_airport_id, options_for_select(@airport_codes), { prompt: "To" }, class: "dropdown-item") %>
     </div>
-    <div class="control">
-    <%= f.select(:day, options_for_select(@days), { prompt: "Day" }) %>
+    <div class="block">
+      <%= f.select(:passenger_count, options_for_select(1..4, selected: params[:passenger_count]), { prompt: "Passengers" }, class: "dropdown-item") %>
     </div>
-    <div class="control">
-    <%= f.select(:month, options_for_select(@months), { prompt: "Month" }) %>
+    <div class="block">
+      <%= f.select(:day, options_for_select(@days), { prompt: "Day" }, class: "dropdown-item") %>
     </div>
-    <div class="control">
-    <%= f.select(:year, options_for_select(@years), { prompt: "Year" }) %>
+    <div class="block">
+      <%= f.select(:month, options_for_select(@months), { prompt: "Month" }, class: "dropdown-item") %>
     </div>
-    <div class="control">
-    <%= submit_tag("Show Flights")%>
+    <div class="block">
+      <%= f.select(:year, options_for_select(@years), { prompt: "Year" }, class: "dropdown-item") %>
+    </div>
+  </div>
+    <div class="block">
+      <%= submit_tag("Show Flights", class: "button is-link is-normal")%>
     </div>
 <% end %>
 </div>

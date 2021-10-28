@@ -1,0 +1,33 @@
+<div class="container">
+  <%= form_with model: @booking do |f| %>
+    <p class="control">From Airport:
+    <%= @selected_flight.departure_airport.code %>
+    </p>
+    <p class="control">To Airport:
+    <%= @selected_flight.arrival_airport.code %>
+    </p>
+    <p class="control">Duration: 
+    <%= @selected_flight.flight_duration %>
+    Hours
+    </p>
+    <p class="control">Date:
+    <%= @selected_flight.start.strftime("%m/%d/%Y") %>
+    </p>
+    <p class="control">Departure Time:
+    <%= @selected_flight.start.strftime("%H:%M") %>
+    </p>
+    <h3>Passengers: </h3>
+    <%= f.fields_for :passengers do |passenger_form| %>
+    <div class="column">
+          <p class="control">
+            <%= passenger_form.text_field :name, required: true, placeholder: "Name" %>
+            <%= passenger_form.email_field :email, required: true, placeholder: "Email" %>
+          </p>
+    </div>
+    <% end %>
+    <%= f.hidden_field :flight_id, value: params[:f] %>
+    <div class="block">
+      <%= f.submit "Book Flight", class: "button is-primary is-normal"%>
+    </div>
+  <% end %>
+</div>
