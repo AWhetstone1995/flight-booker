@@ -1,6 +1,6 @@
 class Booking < ApplicationRecord
-  belongs_to :flight, foreign_key: :flight_id
-  has_many :passengers, foreign_key: :passenger_id
+  belongs_to :flight
+  has_many :passengers
 
   accepts_nested_attributes_for :passengers
 end

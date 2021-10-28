@@ -5,7 +5,8 @@
     <%= f.select(:arrival_airport_id, options_for_select(@airport_codes), { prompt: "To" }) %>
     </div>
     <div class="control">
-    <%= f.select(:passenger_count, options_for_select(1..4), { prompt: "Passengers" }) %>
+    <%= f.select(:passenger_count, options_for_select(1..4, selected: params[:passenger_count]), { prompt: "Passengers" }) %>
+    <%# <%= f.select :passenger_count, [1, 2, 3, 4], { prompt: "Passengers" } %>
     </div>
     <div class="control">
     <%= f.select(:day, options_for_select(@days), { prompt: "Day" }) %>
