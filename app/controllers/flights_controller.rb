@@ -10,7 +10,6 @@ class FlightsController < ApplicationController
       @flights = Flight.where(departure_airport_id: params[:departure_airport_id],
                               arrival_airport_id: params[:arrival_airport_id],
                               start: @selected_date.all_day)
-      p "Flights: #{@flights}"
     end
   end
 end

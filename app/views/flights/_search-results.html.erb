@@ -1,4 +1,4 @@
-<%= form_with url: "/flights", method: :get do |flight| %>
+<%= form_with url: "/bookings/new", method: :get do |flight| %>
   <% @flights.each do |f| %>
     <div class="field is-grouped">
     <% departure_airport = f.departure_airport.code %>
