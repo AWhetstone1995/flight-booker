@@ -1,1 +1,35 @@
-test
+<section class="hero is-light">
+<div class="hero-body">
+<div class="center">
+<div class="container has-text-centered">
+  <h1 class="title">Flight Summary</h1>
+    <p class="control">
+      From:
+      <%= @booking.flight.departure_airport.code %>
+      To:
+      <%= @booking.flight.arrival_airport.code %>
+    </p>
+    <br/>
+    <p class="control">
+      Departure Time:
+    </p>
+    <p class="control">
+      <%= @booking.flight.start.strftime("%m/%d/%Y") %>
+      <%= @booking.flight.start.strftime("%H:%M")%>
+    </p>
+    <br/>
+    <h2 class="subtitle">Passenger Details</h2>
+    <% @booking.passengers.each do |passenger| %>
+      <p class="control">
+        Name:
+        <%= passenger.name %>
+        Email:
+        <%= passenger.email %>
+      </p>
+    <% end %>
+    <br/>
+    <%= link_to "Book another flight", root_path, class: "button is-dark is-outlined"%>
+</div>
+</div>
+</div>
+</section>

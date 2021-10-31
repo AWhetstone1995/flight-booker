@@ -7,11 +7,11 @@
     <% time = f.start.strftime("%H:%M") %>
     <% duration = f.flight_duration %>
     <%= radio_button_tag(:f, f.id) %>
-    <p class="control">From: <%= departure_airport %>
+    <p class="control">From: <%= departure_airport %></p>
+    <p class="control">To: <%= arrival_airport %>
     <p class="control">Departure date: <%= date %></p>
     <p class="control">Departure time: <%= time %></p>
-    <p class="control">Duration: <%= duration %> hours </p>
-    <p class="control">To: <%= arrival_airport %>
+    <p class="control">Duration: <%= duration %> hours </p>    
     </div>
   <% end %>
   <%= hidden_field_tag(:passenger_count, params[:passenger_count]) %>

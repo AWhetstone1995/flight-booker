@@ -17,5 +17,13 @@
  @import "bulma";
 
  .box {
-     background-color: rgb(221, 219, 219);
+    background-color: rgb(212, 209, 209);
+    color:rgb(29, 27, 27);
+    margin: 0rem;
+ }
+
+ .center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
  }
