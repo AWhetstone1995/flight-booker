@@ -1,0 +1,13 @@
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Booking information for: <%= @booking.passengers.pluck(:name) %></h1>
+    <p>
+      You have successfully booked your flight for <%= @booking.flight.start.strftime("%m/%d/%Y") %>,
+      your departure time is: <%= @booking.flight.start.strftime("%H:%M") %>.<br>
+    </p>    
+    <p>Thanks for booking your flight!</p>
+  </body>
+</html>

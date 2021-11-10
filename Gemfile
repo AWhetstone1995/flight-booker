@@ -34,6 +34,9 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
+# Opens mail in browser instead of sending out emails to addresses during development
+gem "letter_opener", group: :development
+
 gem 'bulma-rails', '~> 0.9.2'
 gem 'simple_form', '~> 5.1'
 gem 'gravatar_image_tag', '~> 1.2'

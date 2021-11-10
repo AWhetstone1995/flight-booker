@@ -1,0 +1,8 @@
+Booking information for: <%= @booking.passengers.pluck(:name) %>
+==========================
+
+You have successfully booked your flight for <%= @booking.flight.start.strftime("%m/%d/%Y") %>,
+your departure time is: <%= @booking.flight.start.strftime("%m/%d/%Y") %>.
+
+==========================
+Thanks for booking your flight!
