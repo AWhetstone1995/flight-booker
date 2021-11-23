@@ -30,6 +30,6 @@ def rand_time(from, to=Time.now)
 end
 
 # Seed database with flights
-200.times do
+2000.times do
   Flight.create(departure_airport_id: Airport.ids.sample, arrival_airport_id: Airport.ids.sample, start: rand_time(30.days.from_now), flight_duration: rand(1..6))
 end
