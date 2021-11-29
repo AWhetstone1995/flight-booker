@@ -5,13 +5,12 @@
   <br/>
   <div class="box">
     <% unless @flights.nil? %>
-      <% if @flights.any? %>
+      <% if @flights.empty? %>
+       <p>There are no flights for this day between these two airports</p>   
+      <% elsif @flights.any? %>
         <%= render "search-results" %>
       <% end %>
-    <% end %>
-      <% if @flights.empty? %>
-       <p>There are no flights for this day between these two airports</p>
-      <% end %>        
+    <% end %>    
     </div>
   </div>
 </section>
