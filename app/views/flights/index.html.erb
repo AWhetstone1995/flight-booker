@@ -9,6 +9,9 @@
         <%= render "search-results" %>
       <% end %>
     <% end %>
+      <% if @flights.empty? %>
+       <p>There are no flights for this day between these two airports</p>
+      <% end %>        
     </div>
   </div>
 </section>
